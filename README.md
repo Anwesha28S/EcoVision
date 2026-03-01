@@ -73,6 +73,10 @@ Waste-Classification/
 
 ---
 
+## Model in work 
+<img width="1447" height="923" alt="image" src="https://github.com/user-attachments/assets/f17f0475-65f1-49d1-a5bb-7dc9815bed74" />
+
+
 ## 🚀 Future Scope
 
 This project can be extended by integrating:
