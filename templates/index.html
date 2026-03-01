@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EcoVision</title>
+    <style>
+        :root {
+            --primary: #27ae60;
+            --secondary: #2c3e50;
+            --bg: #f4f7f6;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg);
+            color: var(--secondary);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .header-logo {
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .container { 
+            background: white;
+            padding: 30px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+        }
+        .about-flex-container {
+            display: flex;
+            align-items: center; 
+            gap: 30px;           
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 20px 0;
+        }
+
+        .about-image {
+            flex: 0 0 auto;     
+            border-radius: 10px;
+            object-fit: contain;
+        }
+        .about-image-wrapper {
+            flex: 2;              
+            text-align: center;
+        }
+        .about-text {
+            
+            text-align: left;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .about-text h3 {
+            margin-top: 0;
+            color: #27ae60;
+        }
+
+        /* Responsive: Stacks them on small screens */
+        @media (max-width: 768px) {
+            .about-flex-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        h2 { color: var(--primary); margin-bottom: 25px; }
+
+        input[type="file"] {
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px dashed #ddd;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #219150;
+        }
+
+        #result { 
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .category-badge {
+            background: #e8f5e9;
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .preview-img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-top: 10px;
+            max-width: 100%;
+        }
+        .headingg{
+            color: #152238;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="headingg">EcoVision</h1>
+        <div class="about-flex-container">
+            <img src="{{ url_for('static', filename='header_image.png') }}" 
+                width="400" height="350" 
+                class="about-image" 
+                alt="Waste Classification Header">
+
+                    <div class="about-text">
+                        <h2>Why Application for waste-classification?</h2>
+                        <h4>Awareness Matters</h4>
+                        <p>
+                            The world generates at least <b>3.5 million tons</b> of waste per day and this number is still 
+                            increasing day by day. Manual segregation of these wastes requires huge manpower and time, on the other hand, this also results in human error due to which the whole process is hampered. That's why we need to be aware about waste.
+                        </p>
+                        <p>
+                            This app helps users to classify waste into <b>4 different categories</b>, namely <b>Hazardous, Non-recyclable, Organic and Recyclable.</b>
+                            The recycling process for these materials is complex, and it is incredibly difficult 
+                            to sort them once they reach a recycling factory.
+                        </p>
+                        <p>
+                            The future scope of this is to integrate, <b>Computer Vision</b> and <b>IOT</b> for classification at the source along with at the waste segregation firms.  Currently, <b>70% of waste 
+                            is not recycled</b> simply because it was never properly classified at the source.
+                        </p>
+                    </div>
+        </div>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br><br>
+            <input type="submit" value="Classify Image">
+        </form>
+        {% if prediction %}
+            <div id="result">
+                <h3><span>Detected Category: {{ prediction }}<span></h3>
+                <img src="{{ img_path }}" width="380">
+            </div>
+            <div style="margin-top: 20px; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 10px;">
+            <h3 style="margin-top: 0; color: #27ae60;">♻️ How to Recycle:</h3>
+            <p>{{ advice }}</p>
+            <a href="{{ yt_url }}" target="_blank" class="yt-button">
+                🎥 Watch Recycling Guides on YouTube
+            </a>
+            </div>
+        {% endif %}
+        
+    </div>
+</body>
+</html>
