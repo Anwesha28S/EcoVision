@@ -43,6 +43,7 @@ This can help individuals and organizations **separate waste correctly before di
 2. The image is processed using a **trained deep learning model**.
 3. The model predicts the waste category.
 4. The result is displayed to the user through the web interface.
+5. According to the classified waste, youtube video links are redirected to users for assisting in recycling and management.
 
 ---
 
