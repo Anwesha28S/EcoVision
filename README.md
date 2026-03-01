@@ -76,6 +76,9 @@ Waste-Classification/
 ## Model in work 
 <img width="1447" height="923" alt="image" src="https://github.com/user-attachments/assets/f17f0475-65f1-49d1-a5bb-7dc9815bed74" />
 
+<img width="1434" height="939" alt="image" src="https://github.com/user-attachments/assets/3c2978ac-ee25-41bf-89b8-ba51460624d1" />
+
+<img width="1334" height="863" alt="image" src="https://github.com/user-attachments/assets/276772cf-3ff8-4854-89dc-c9e4b925c557" />
 
 ## 🚀 Future Scope
 
