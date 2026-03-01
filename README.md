@@ -66,7 +66,7 @@ Waste-Classification/
 ├── requirements.txt
 ├── README.md
 │
-├── models/          # trained model (ignored in GitHub)
+├── model       # trained model 
 ├── static/
 │   └── uploads/
 └── templates/
