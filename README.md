@@ -81,6 +81,9 @@ Waste-Classification/
 
 <img width="1334" height="863" alt="image" src="https://github.com/user-attachments/assets/276772cf-3ff8-4854-89dc-c9e4b925c557" />
 
+<img width="1537" height="895" alt="image" src="https://github.com/user-attachments/assets/48b87e8f-fd45-4f17-9dd0-64108f057604" />
+
+
 ## 🚀 Future Scope
 
 This project can be extended by integrating:
