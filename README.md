@@ -51,7 +51,7 @@ This can help individuals and organizations **separate waste correctly before di
 
 * **Python**
 * **TensorFlow / Keras**
-* **Computer Vision**
+* **Computer Vision**(VGG16 CNN model)
 * **Flask** (for web interface)
 * **HTML / CSS / JavaScript**
 
